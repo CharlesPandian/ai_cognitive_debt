@@ -1,10 +1,10 @@
 # The Illusion of Competence and Cognitive Debt in Primary Mathematics: Causal Telemetry and Multi-Agent Behavioral Audits of Generative AI Tutoring
 
-[![Target Journal: Computers & Education](https://img.shields.io/badge/Target_Journal-Computers_%26_Education_(Elsevier)-0072B2?style=flat-square)](https://www.sciencedirect.com/journal/computers-and-education)
-[![Elsevier C&E: Tier-1 Verified](https://img.shields.io/badge/Submission_Audit-100%25_Verified-009E73?style=flat-square)](verify_tier1_submission.py)
+[![Target Journal: Computers & Education](https://img.shields.io/badge/Target_Journal-Computers_%26_Education_%28Elsevier%29-0072B2?style=flat-square)](https://www.sciencedirect.com/journal/computers-and-education)
 [![Reproducibility: End-to-End Automated](https://img.shields.io/badge/Reproducibility-Automated_Pipeline-D55E00?style=flat-square)](run_all.sh)
-[![Open Science: Data & Code](https://img.shields.io/badge/Open_Science-Data_%26_Code_Available-555555?style=flat-square)](#9-data-provenance--ethical-compliance)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
+[![Code License: MIT](https://img.shields.io/badge/Code_License-MIT-green.svg?style=flat-square)](https://github.com/CharlesPandian/ai_cognitive_debt/blob/main/LICENSE)
+[![Data License: CC BY 4.0](https://img.shields.io/badge/Data_License-CC_BY_4.0-blue.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
+[![Public Repository: ai_cognitive_debt](https://img.shields.io/badge/Public_Repo-ai__cognitive__debt-555555?style=flat-square)](https://github.com/CharlesPandian/ai_cognitive_debt)
 
 **Author:** Charles Pandian  
 **Affiliation:** Independent Researcher, Afarion Systems, Tamilnadu, India  
@@ -25,9 +25,9 @@
 
 ## 1. Executive Summary & Research Highlights
 
-This open-science research repository contains the complete empirical data, computational modeling pipeline, statistical verification testbed, and publication-ready LaTeX manuscripts for our investigation into **algorithmic offloading and cognitive debt** in primary mathematics education (Grades 4–5, ages 9–11).
+This research repository contains the complete empirical data, computational modeling pipeline, and open-science replication code for our investigation into **algorithmic offloading and cognitive debt** in primary mathematics education (Grades 4–5, ages 9–11).
 
-### Core Research Highlights (Elsevier $\le$ 85 Characters/Bullet Compliance)
+### Core Research Highlights
 1. **Immediate answer access triggers a severe Performance-Learning Paradox.**
 2. **Cognitive offloading accelerates impulsivity and erodes productive struggle.**
 3. **Cognitive Debt BKT exhibits an 83% vs 14% post-removal retention collapse.**
@@ -40,15 +40,21 @@ This open-science research repository contains the complete empirical data, comp
 
 Integrating **Sweller's Cognitive Load Theory (CLT)**, **Bjork's Desirable Difficulties Framework**, and **Sharma's Algorithmic Sycophancy**, this study models the divergence between immediate in-session task execution and long-term unassisted schema consolidation:
 
+### Pathway A vs. Pathway B: Dual Developmental Pathways
+![Dual Developmental Pathways](figures/fig1_dual_developmental_pathways.png)
+
+*Figure 1: Dual developmental pathways contrasting authentic pedagogical scaffolding (productive struggle $\to$ active schema integration) against automated AI offloading (working memory bypass $\to$ cognitive debt accrual).*
+
+### Multi-Layer Theoretical Architecture
 ![Theoretical Cognitive Architecture](figures/fig2_theoretical_framework.png)
 
-*Figure 1: Cognitive architecture contrasting Pedagogical Scaffolding (Desirable Difficulties $\to$ Active Schema Integration) with Automated AI Offloading (Working Memory Bypass $\to$ Cognitive Debt Accrual).*
+*Figure 2: Multi-layer theoretical architecture of primary cognitive debt, mapping developmental cognitive load, the instructional assistance dilemma, and RLHF algorithmic sycophancy onto executive function formation.*
 
 ### Hypotheses
 - **$H_1$ (Performance–Learning Paradox):** High offloading yields near-perfect assisted in-session accuracy but triggers catastrophic failure when AI assistance is withdrawn on delayed unassisted transfer.
 - **$H_2$ (Impulsivity Acceleration):** Longitudinal reliance on automated help erodes metacognitive reflection, causing response latency to decay rapidly toward sub-3-second impulsive guessing.
 - **$H_3$ (Cognitive Debt Decay in BKT):** Extending Corbett–Anderson Bayesian Knowledge Tracing with an offloading-modulated decay parameter ($\phi_{\text{decay}}$) significantly outperforms canonical BKT in predicting post-withdrawal retention collapse.
-- **$H_4$ (Pedagogical Sycophancy & Conversational Wear-Down):** Generative AI tutors without hard logit-level gating will succumb to conversational wear-down, leaking bottom-out answers under repeated child pleading.
+- **$H_4$ (Pedagogical Sycophancy & Conversational Wear-Down):** Generative AI tutors without hard logit-level gating succumb to conversational wear-down, leaking bottom-out answers under repeated child pleading.
 
 ---
 
@@ -58,7 +64,7 @@ To overcome the dual barriers of classroom child-protection ethics (COPPA/GDPR-K
 
 ![Methodological Architecture](figures/fig3_dual_study_pipeline.png)
 
-*Figure 2: Dual-study methodological pipeline connecting large-scale empirical learning telemetry ($N = 4,200$) with controlled in-silico multi-agent behavioral audits.*
+*Figure 3: Dual-study methodological pipeline connecting large-scale empirical learning telemetry ($N = 4,200$) with controlled in-silico multi-agent behavioral audits.*
 
 ### Study 1: Quasi-Experimental Telemetry & Causal Longitudinal Analysis
 - **Data Provenance:** 88 assignment-level Randomized Controlled Trials (RCTs) paired with the 2012–2013 Longitudinal Clickstream dataset from the ASSISTments ecosystem ($N = 4,200$ elementary learners; 24 Knowledge Components in Grades 4–5 foundational mathematics).
@@ -100,22 +106,27 @@ To overcome the dual barriers of classroom child-protection ethics (COPPA/GDPR-K
 #### 1. The Performance–Learning Paradox & Latency Collapse
 ![Performance Learning Paradox](figures/fig4_performance_learning_paradox.png)
 
-*Figure 3: Left: The empirical crossover interaction demonstrating the Illusion of Competence (94.1% in-session collapsing to 34.2% delayed unassisted accuracy; $d = 2.11$). Right: Latency trajectory collapse showing rapid acceleration into sub-3s impulsive guessing.*
+*Figure 4: Left: The empirical crossover interaction demonstrating the Illusion of Competence (94.1% in-session collapsing to 34.2% delayed unassisted accuracy; $d = 2.11$). Right: Latency trajectory collapse showing rapid acceleration into sub-3s impulsive guessing.*
 
 #### 2. Cognitive Debt Bayesian Knowledge Tracing (BKT)
 ![BKT Retention Curves](figures/fig5_bkt_retention_curves.png)
 
-*Figure 4: Simulated knowledge acquisition and post-removal retention trajectories comparing Standard Corbett–Anderson BKT against Cognitive Debt BKT ($\Delta\text{BIC} = -24,740.7$). High offloaders suffer an 83% to 14% post-withdrawal mastery collapse.*
+*Figure 5: Simulated knowledge acquisition and post-removal retention trajectories comparing Standard Corbett–Anderson BKT against Cognitive Debt BKT ($\Delta\text{BIC} = -24,740.7$). High offloaders suffer an 83% to 14% post-withdrawal mastery collapse.*
 
 #### 3. Multi-Agent Audit Heatmaps & Kaplan–Meier Survival Dynamics
 ![LLM Audit Heatmap & Survival](figures/fig6_llm_audit_heatmap_survival.png)
 
-*Figure 5: Left: Multi-agent rubric score heatmaps across student personas and tutor configurations. Right: Kaplan–Meier Socratic survival curves revealing that even Guardrailed Socratic AI suffers a 49.3% sycophantic collapse by Turn 4.*
+*Figure 6: Left: Multi-agent rubric score heatmaps across student personas and tutor configurations. Right: Kaplan–Meier Socratic survival curves revealing that even Guardrailed Socratic AI suffers a 49.3% sycophantic collapse by Turn 4.*
 
-#### 4. Misconception Remediation & Entropy Dynamics
-![Domain Misconceptions & Entropy Dynamics](figures/fig7_domain_misconceptions_and_remediation.png)
+#### 4. Misconception Remediation & Domain Vulnerabilities
+![Domain Misconceptions](figures/fig7_domain_misconceptions_and_remediation.png)
 
-*Figure 6: Domain-level analysis across Arithmetic, Fractions, Ratios, and Geometry, showing differential Bottom-Out Failure Rates and Misconception Remediation Rates (MRR).*
+*Figure 7: Domain-level analysis across Arithmetic, Fractions, Ratios, and Geometry, showing differential Bottom-Out Failure Rates and Misconception Remediation Rates (MRR).*
+
+#### 5. Cognitive Debt Accrual & Conversational Entropy Dynamics
+![Cognitive Debt Entropy Dynamics](figures/fig8_cognitive_debt_entropy_dynamics.png)
+
+*Figure 8: Discrete hazard rates, cumulative cognitive debt accrual trajectories, and conversational dialogue entropy dynamics across tutor configurations.*
 
 ---
 
@@ -144,11 +155,10 @@ To prevent automated answer leakage and arrest cognitive debt accrual, we propos
 ## 6. Directory Architecture & File Manifest
 
 ```text
-project_ai_cognitive_debt/
+ai_cognitive_debt/
 ├── run_all.sh                              # Master one-click end-to-end execution script
 ├── requirements.txt                        # Pinned dependencies (numpy, pandas, scipy, statsmodels, etc.)
-├── TIER1_DATA_AUDIT.md                     # Comprehensive statistical and causal verification report
-├── verify_tier1_submission.py              # Automated 6/6 Elsevier compliance audit suite
+├── README.md                               # Project documentation and reproduction guide
 │
 ├── data/
 │   ├── raw/
@@ -176,22 +186,14 @@ project_ai_cognitive_debt/
 │   ├── fig7_domain_misconceptions_and_remediation.{pdf,png}
 │   └── fig8_cognitive_debt_entropy_dynamics.{pdf,png}
 │
-├── manuscript/                             # Elsevier cas-sc LaTeX sources and compiled PDFs
-│   ├── main.tex & main.pdf                 # Camera-Ready / Unblinded manuscript (23 pages)
-│   ├── manuscript_anonymized.tex & pdf     # Double-blind peer review manuscript (zero leaks)
-│   ├── title_page.tex & title_page.pdf     # Separate Title Page with author metadata
-│   ├── references.bib                      # 44 verified APA/Author-Date BibTeX entries
-│   ├── highlights.txt                      # 5 mandatory highlights (<= 85 chars/bullet)
-│   └── cover_letter.tex & pdf              # Formal editorial cover letter
-│
-└── src/                                    # Modular analysis and figure generation code
-    ├── generate_benchmark.py               # Generates the 100-item primary benchmark
-    ├── 01_assistments_causal_analysis.py   # Causal telemetry & crossover RM-ANOVA
-    ├── 02_bkt_cognitive_decay_model.py     # Cognitive Debt BKT grid-search & simulation
-    ├── 03_llm_validation_audit.py          # 3x3 factorial LLM audit engine (Google Gemini API)
-    ├── 04_rubric_scorer_and_stats.py       # Rubric scoring, Cohen's kappa & survival analysis
-    ├── 05_generate_publication_figures.py  # Generates Figures 1–8
-    └── generate_vector_graphical_abstract.py # Generates pure vector graphical abstract
+└── src/                                    # Modular scientific analysis & figure generation pipeline
+    ├── generate_benchmark.py               # Generates 100-item stratified primary math benchmark
+    ├── 01_assistments_causal_analysis.py   # Large-scale EDM causal analysis & ANOVA
+    ├── 02_bkt_cognitive_decay_model.py     # Cognitive Debt BKT model parameterization
+    ├── 03_llm_validation_audit.py          # Multi-agent 3x3x100 conversational audit execution
+    ├── 04_rubric_scorer_and_stats.py       # Automated rubric scoring, kappa & survival analysis
+    ├── 05_generate_publication_figures.py  # Elsevier-compliant figures (300 DPI + vector PDF)
+    └── generate_vector_graphical_abstract.py # 100% vector Graphical Abstract generator
 ```
 
 ---
@@ -201,7 +203,6 @@ project_ai_cognitive_debt/
 ### System Prerequisites
 - **Operating System:** Linux, macOS, or Windows (WSL2 recommended)
 - **Python:** 3.10, 3.11, or 3.12
-- **LaTeX Engine (optional for PDF build):** `tectonic` or `pdflatex`
 
 ### 1. Installation
 ```bash
@@ -214,18 +215,12 @@ pip install -r requirements.txt
 ```
 
 ### 2. One-Click End-to-End Pipeline Execution
-To execute the data processing, BKT cognitive debt modeling, inferential statistics, figure rendering, and manuscript compilation:
+To execute the data processing, BKT cognitive debt modeling, inferential statistics, and publication figure rendering:
 ```bash
 bash run_all.sh
 ```
 
-### 3. Automated Submission Compliance Audit
-To independently verify all 6 Elsevier desk-rejection checks (abstract word count, highlights character limits, zero broken citations, zero double-anonymity leaks, and numerical consistency):
-```bash
-python verify_tier1_submission.py
-```
-
-### 4. Running Live Multi-Agent LLM Audits
+### 3. Running Live Multi-Agent LLM Audits
 To re-run the 900-trajectory Study 2 simulation directly against Google's live `gemini-3.8-flash` model:
 ```bash
 export GEMINI_API_KEY="YOUR_API_KEY"
@@ -235,14 +230,12 @@ bash run_all.sh --live
 
 ---
 
-## 8. Elsevier Editorial Compliance Checklist
+## 8. Open Science & Reproducibility Checklist
 
-- [x] **Strict Double-Anonymized Split:** Author identities, institutional affiliations, and acknowledgments are strictly isolated to `manuscript/title_page.tex`. `manuscript_anonymized.tex` contains zero identifying tokens.
-- [x] **Abstract Word Count:** Exactly 240 words (Limit: $\le 250$ words).
-- [x] **Highlights Character Limit:** 5 bullets, all 69–76 characters each (Limit: $\le 85$ characters including spaces).
-- [x] **Vector Graphical Abstract:** 100% deterministic vector graphics rendered via Matplotlib (`figures/graphical_abstract.pdf` and 300 DPI `.png`), fully compliant with Elsevier policy barring AI-generated raster art.
-- [x] **Citation Integrity:** 44 in-text citations matched 1:1 with `references.bib` without broken references (`??` or `[?]`).
-- [x] **Open Data & Code (Option C):** All benchmarks, simulation checkpoints, and pipeline scripts are fully accessible under open-source licenses.
+- [x] **Open Data & Code:** All benchmarks, simulation checkpoints, and pipeline scripts are fully accessible under open-source licenses.
+- [x] **Deterministic Reproduction:** One-click script (`bash run_all.sh`) reproduces all statistical models and publication figures.
+- [x] **Vector Graphical Abstract & Figures:** 100% deterministic vector graphics rendered via Matplotlib (`figures/graphical_abstract.pdf` and 300 DPI `.png`), fully compliant with Elsevier policy barring AI-generated raster art.
+- [x] **Empirical Causal Baseline:** Parameterized from $N = 4,200$ primary school learners across 88 randomized controlled trials.
 
 ---
 
@@ -273,5 +266,5 @@ If you utilize this dataset, benchmark, or computational modeling pipeline in yo
 ---
 
 ## License
-- **Code & Pipeline:** [MIT License](LICENSE)
+- **Code & Pipeline:** [MIT License](https://github.com/CharlesPandian/ai_cognitive_debt/blob/main/LICENSE)
 - **Datasets & Documentation:** [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)

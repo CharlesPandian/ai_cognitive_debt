@@ -169,50 +169,125 @@ generate_fig1_graphical_abstract = generate_fig1_dual_developmental_pathways
 # Figure 2: Theoretical Framework Diagram
 # -------------------------------------------------------------
 def generate_fig2_theoretical_framework():
-    fig, ax = plt.subplots(figsize=(11, 7.2), dpi=300)
+    fig, ax = plt.subplots(figsize=(12, 7.5), dpi=300)
     ax.set_xlim(0, 100)
     ax.set_ylim(0, 100)
     ax.axis("off")
 
-    layers = [
-        ("LAYER 1: DEVELOPMENTAL COGNITIVE ARCHITECTURE (Ages 9–11 / Grades 4–5)",
-         [("Working Memory Constraints", "Limited capacity (Sweller, 1988);\neasily overwhelmed or bypassed.", 5.5, 28, PALETTE["blue"]),
-          ("Emergent Executive Function", "Impulse control & perseverance in\npre-frontal cortex development.", 36.0, 28, PALETTE["purple"]),
-          ("Socio-Cognitive Conflict", "Piagetian equilibration triggered by\nproductive struggle (Piaget, 1977).", 66.5, 28, PALETTE["green"])],
-         94),
-        ("LAYER 2: PEDAGOGICAL INTERACTION DYNAMICS (The Assistance Dilemma)",
-         [("Desirable Difficulties", "Spacing & generation effects enhance\ndurable knowledge storage\n(Bjork & Bjork, 2011).", 5.5, 28, PALETTE["orange"]),
-          ("Zone of Proximal Development", "Contingent scaffolding & fading\n(Vygotsky, 1978; Wood et al., 1976).", 36.0, 28, PALETTE["blue"]),
-          ("Cognitive Offloading", "Substitutive offloading trades immediate\neffort for long-term schema loss\n(Risko & Gilbert, 2016).", 66.5, 28, PALETTE["vermilion"])],
-         62),
-        ("LAYER 3: GENERATIVE AI INTERFACE DYNAMICS (The Sycophancy Trap)",
-         [("RLHF Algorithmic Sycophancy", "LLMs align to user compliance;\nprematurely leak answers under begging.", 5.5, 28, PALETTE["vermilion"]),
-          ("Performance–Learning Paradox", "Flawless assisted execution masks zero\nlatent neural schema integration.", 36.0, 28, PALETTE["orange"]),
-          ("Accumulation of Cognitive Debt", "Impulsivity compounds, eroding\nunassisted problem-solving self-efficacy.", 66.5, 28, PALETTE["black"])],
-         30)
+    # Column Headers at Top
+    col_headers = [
+        ("COGNITIVE LOAD & MEMORY", 34.5),
+        ("EXECUTIVE FUNCTION & SCAFFOLDING", 60.5),
+        ("STRUGGLE & COGNITIVE DEBT", 86.5)
+    ]
+    for ch_text, ch_x in col_headers:
+        ch_box = patches.FancyBboxPatch((ch_x - 11.8, 94.2), 23.6, 4.4, boxstyle="round,pad=0.3",
+                                        fc="#F0F4F8", ec="#90A4AE", lw=1.1, zorder=2)
+        ax.add_patch(ch_box)
+        ax.text(ch_x, 96.4, ch_text, ha="center", va="center", fontsize=7.6, weight="bold", color="#1A237E")
+
+    layers_data = [
+        {
+            "num": "LAYER 1",
+            "title": "DEVELOPMENTAL\nCOGNITIVE\nARCHITECTURE",
+            "subtitle": "(Ages 9–11 / Grades 4–5)",
+            "color": "#0D47A1",
+            "bg_color": "#E8EAF6",
+            "y_top": 92.2, "y_bot": 66.2,
+            "cards": [
+                ("Working Memory Constraints", "Limited capacity (Sweller, 1988);\neasily overwhelmed or bypassed.", PALETTE["blue"]),
+                ("Emergent Executive Function", "Impulse control & perseverance in\npre-frontal cortex development.", PALETTE["purple"]),
+                ("Socio-Cognitive Conflict", "Piagetian equilibration triggered by\nproductive struggle (Piaget, 1977).", PALETTE["green"])
+            ]
+        },
+        {
+            "num": "LAYER 2",
+            "title": "PEDAGOGICAL\nINTERACTION\nDYNAMICS",
+            "subtitle": "(The Assistance Dilemma)",
+            "color": "#E65100",
+            "bg_color": "#FFF3E0",
+            "y_top": 60.2, "y_bot": 34.2,
+            "cards": [
+                ("Desirable Difficulties", "Spacing & generation effects enhance\ndurable knowledge storage\n(Bjork & Bjork, 2011).", PALETTE["orange"]),
+                ("Zone of Proximal Development", "Contingent scaffolding & fading\n(Vygotsky, 1978; Wood et al., 1976).", PALETTE["blue"]),
+                ("Cognitive Offloading", "Substitutive offloading trades\neffort for long-term schema loss\n(Risko & Gilbert, 2016).", PALETTE["vermilion"])
+            ]
+        },
+        {
+            "num": "LAYER 3",
+            "title": "GENERATIVE AI\nINTERFACE\nDYNAMICS",
+            "subtitle": "(The Sycophancy Trap)",
+            "color": "#B71C1C",
+            "bg_color": "#FFEBEE",
+            "y_top": 28.2, "y_bot": 2.2,
+            "cards": [
+                ("RLHF Algorithmic Sycophancy", "LLMs align to user compliance;\nprematurely leak answers under begging.", PALETTE["vermilion"]),
+                ("Performance–Learning Paradox", "Flawless assisted execution masks\nzero latent schema integration.", PALETTE["orange"]),
+                ("Accumulation of Cognitive Debt", "Impulsivity compounds, eroding\nunassisted problem-solving self-efficacy.", PALETTE["black"])
+            ]
+        }
     ]
 
-    for layer_title, cards, y_top in layers:
-        # Layer backdrop
-        bg = patches.FancyBboxPatch((3, y_top - 24), 94, 27, boxstyle="round,pad=1.0",
-                                    fc="#F8F9FA", ec="#D0D0D0", lw=1.4)
-        ax.add_patch(bg)
-        ax.text(5.5, y_top + 1.2, layer_title, fontsize=9.8, weight="bold", color="#1A237E")
+    # Draw Layers
+    for l_idx, l in enumerate(layers_data):
+        y_h = l["y_top"] - l["y_bot"]
         
-        for card_title, card_desc, x_pos, width, color in cards:
-            c_box = patches.FancyBboxPatch((x_pos, y_top - 21.5), width, 19, boxstyle="round,pad=0.6",
-                                           fc="#FFFFFF", ec=color, lw=1.6)
+        # Layer Background band spanning full width
+        l_band = patches.FancyBboxPatch((2.0, l["y_bot"]), 96.0, y_h, boxstyle="round,pad=0.8",
+                                       fc="#FAFAFA", ec="#CFD8DC", lw=1.2, zorder=1)
+        ax.add_patch(l_band)
+        
+        # Left Header Pillar Card
+        p_box = patches.FancyBboxPatch((3.2, l["y_bot"] + 0.8), 17.5, y_h - 1.6, boxstyle="round,pad=0.5",
+                                       fc=l["bg_color"], ec=l["color"], lw=1.6, zorder=2)
+        ax.add_patch(p_box)
+        ax.text(11.95, l["y_bot"] + y_h - 3.2, l["num"], ha="center", va="center", fontsize=9.2, weight="bold", color=l["color"], zorder=3)
+        ax.text(11.95, l["y_bot"] + y_h/2 + 0.2, l["title"], ha="center", va="center", fontsize=8.6, weight="bold", color="#212121", linespacing=1.15, zorder=3)
+        ax.text(11.95, l["y_bot"] + 3.0, l["subtitle"], ha="center", va="center", fontsize=7.2, style="italic", color="#555555", zorder=3)
+        
+        # 3 Content Cards
+        x_centers = [34.5, 60.5, 86.5]
+        card_w = 23.6
+        for c_idx, (c_title, c_desc, c_col) in enumerate(l["cards"]):
+            cx = x_centers[c_idx]
+            c_box = patches.FancyBboxPatch((cx - card_w/2, l["y_bot"] + 1.2), card_w, y_h - 2.4, boxstyle="round,pad=0.5",
+                                           fc="#FFFFFF", ec=c_col, lw=1.5, zorder=2)
             ax.add_patch(c_box)
-            ax.text(x_pos + 1.5, y_top - 4.5, card_title, fontsize=8.8, weight="bold", color=color, va="top")
-            ax.text(x_pos + 1.5, y_top - 10.5, card_desc, fontsize=7.6, color="#333333", va="top", linespacing=1.22)
+            ax.text(cx, l["y_bot"] + y_h - 3.8, c_title, ha="center", va="center", fontsize=8.6, weight="bold", color=c_col, zorder=3)
+            ax.plot([cx - card_w/2 + 1.5, cx + card_w/2 - 1.5], [l["y_bot"] + y_h - 6.5, l["y_bot"] + y_h - 6.5],
+                    color=c_col, lw=0.6, alpha=0.4, zorder=3)
+            ax.text(cx, l["y_bot"] + (y_h - 6.5)/2, c_desc, ha="center", va="center", fontsize=7.4, color="#263238", linespacing=1.22, zorder=3)
 
-    # Connecting directional arrows between layers
-    for x_c in [19.5, 50.0, 80.5]:
-        ax.annotate("", xy=(x_c, 64), xytext=(x_c, 68),
-                    arrowprops=dict(arrowstyle="->", color=PALETTE["grey"], lw=1.8))
-        ax.annotate("", xy=(x_c, 32), xytext=(x_c, 36),
-                    arrowprops=dict(arrowstyle="->", color=PALETTE["grey"], lw=1.8))
-                    
+    # Downward Connecting Arrows between layers
+    # Layer 1 -> Layer 2
+    y1_bottom = layers_data[0]["y_bot"] + 1.2  # 67.4
+    y2_top = layers_data[1]["y_top"] - 1.2     # 59.0
+
+    labels_1_2 = ["Demands", "Cultivated via", "Provokes"]
+    labels_2_3 = ["Subverted by", "Masked by", "Compounds into"]
+
+    for c_idx, cx in enumerate([34.5, 60.5, 86.5]):
+        # Arrow 1->2
+        ax.annotate("", xy=(cx, y2_top + 0.3), xytext=(cx, y1_bottom - 0.3),
+                    arrowprops=dict(arrowstyle="-|>", color="#37474F", lw=2.0, mutation_scale=14), zorder=4)
+        # Connector label badge
+        ax.text(cx, (y1_bottom + y2_top)/2, labels_1_2[c_idx], ha="center", va="center",
+                fontsize=7.2, weight="bold", color="#1A237E",
+                bbox=dict(boxstyle="round,pad=0.25", fc="#FFFFFF", ec="#90A4AE", lw=0.8), zorder=5)
+
+    # Layer 2 -> Layer 3
+    y2_bottom = layers_data[1]["y_bot"] + 1.2  # 35.4
+    y3_top = layers_data[2]["y_top"] - 1.2     # 27.0
+
+    for c_idx, cx in enumerate([34.5, 60.5, 86.5]):
+        # Arrow 2->3
+        ax.annotate("", xy=(cx, y3_top + 0.3), xytext=(cx, y2_bottom - 0.3),
+                    arrowprops=dict(arrowstyle="-|>", color="#C62828", lw=2.0, mutation_scale=14), zorder=4)
+        # Connector label badge
+        ax.text(cx, (y2_bottom + y3_top)/2, labels_2_3[c_idx], ha="center", va="center",
+                fontsize=7.2, weight="bold", color="#C62828",
+                bbox=dict(boxstyle="round,pad=0.25", fc="#FFFFFF", ec="#EF9A9A", lw=0.8), zorder=5)
+
     save_fig(fig, "fig2_theoretical_framework")
 
 # -------------------------------------------------------------
